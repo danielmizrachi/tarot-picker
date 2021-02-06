@@ -1,17 +1,7 @@
 .App {
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   width: 100vw;
   height: 100vh;
-  animation: bg-fade 1.5s ease-out 1;
-  animation-fill-mode: forwards;
-}
-
-@keyframes bg-fade {
-  from {
-    background-color: rgba(0, 0, 0, 0);
-  }
-  to {
-    background-color: rgba(0, 0, 0, 0.3);
-  }
 }

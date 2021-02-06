@@ -6,16 +6,24 @@
 }
 
 .Card {
-  width: 120px;
-  height: 180px;
+  padding: 1% 0.7%;
   border: solid 2px black;
   border-radius: 10px;
+  cursor: pointer;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  transition: width 750ms, height 750ms;
 }
+
 .Card-id {
   font-size: 2em;
   font-family: Algerian, Arial, Helvetica, sans-serif;
+}
+.Card-title {
+  font-size: 1.6em;
+}
+.Card-message {
+  font-size: 1.2em;
 }
