@@ -17,14 +17,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: width 750ms, height 750ms, margin-top 750ms;
+  transition: width 750ms, height 750ms, margin-top 300ms;
 }
 .Card.active {
   width: 400px;
   height: 600px;
-  margin-top: 10vh;
   z-index: 1000;
   cursor: auto;
+}
+.Card:not(.active):hover {
+  margin-top: 2vh;
 }
 
 .Card-id {

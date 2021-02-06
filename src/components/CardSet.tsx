@@ -20,7 +20,7 @@ function CardSet(props: CardSetProps) {
   const [ activeCard, setActiveCard ] = useState<number>(0)
   const hasActiveCard = activeCard > 0
 
-  function handleBackgroundClick() {
+  function handleBackdropClick() {
     if (hasActiveCard) {
       setActiveCard(0)
     }
@@ -38,17 +38,22 @@ function CardSet(props: CardSetProps) {
         onClick={handleCardClick}
         isActive={activeCard === id}
         {...card}
+        key={index}
       />
     )
   })
 
   return (
-    <div
-      className={`CardSet ${hasActiveCard ? 'has-active-card' : ''}`}
-      onClick={handleBackgroundClick}
-    >
-      {cards}
-    </div>
+    <>
+      <div className="CardSet">
+        {cards}
+      </div>
+
+      <div
+        className={`CardSet-backdrop ${hasActiveCard ? 'active' : ''}`}
+        onClick={handleBackdropClick}
+      />
+    </>
   )
 }
 

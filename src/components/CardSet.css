@@ -2,14 +2,25 @@
   width: 100vw;
   height: 100vh;
   padding: 3vh 5vw;
-  position: relative;
   display: flex;
   justify-content: center;
-  z-index: 100;
-  transition: background-color 750ms;
 }
 
-.CardSet.has-active-card {
-  background-color: rgba(0, 0, 0, 0.7);
+.CardSet-backdrop {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  transition: opacity 750ms;
+}
+.CardSet-backdrop.active {
+  opacity: 0.7;
+  z-index: 100;
   cursor: pointer;
 }
