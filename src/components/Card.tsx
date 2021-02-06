@@ -6,7 +6,8 @@ interface CardProps {
   id: number,
   backgroundColor: string,
   title?: string,
-  message?: string
+  message?: string,
+  onClick: (id: number) => void
 }
 
 function Card(props: CardProps) {
@@ -20,9 +21,10 @@ function Card(props: CardProps) {
 
   const style: CSSProperties = {
     backgroundColor,
-    zIndex: isFlipped ? 1000 : 'auto',
     width: isFlipped ? '400px' : '120px',
-    height: isFlipped ? '600px' : '180px'
+    height: isFlipped ? '600px' : '180px',
+    marginTop: isFlipped ? '10vh' : 0,
+    zIndex: isFlipped ? 1000 : 200
   }
 
   return (

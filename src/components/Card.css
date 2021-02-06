@@ -14,7 +14,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: width 750ms, height 750ms;
+  transition: width 750ms, height 750ms, margin-top 750ms;
 }
 
 .Card-id {
