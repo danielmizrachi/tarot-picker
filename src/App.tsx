@@ -1,8 +1,7 @@
 import React from 'react';
-import CardSet from './components/CardSet';
+import CardSet, { CardData } from './components/CardSet';
 
 import './App.css';
-import CardData from './types';
 
 const cardData: CardData[] = [
   {
@@ -24,15 +23,18 @@ const cardData: CardData[] = [
   }, {
     backgroundColor: 'rgba(0, 0, 255, 0.75)',
     title: 'Chakra de la Gorge',
-    message: 'Qu\'est-ce qui a besoin d\'être dit ?'
+    message: 'Qu\'est-ce qui a besoin d\'être dit ?',
+    textColor: 'white'
   }, {
     backgroundColor: 'rgba(0, 0, 80, 0.75)',
     title: 'Chakra du 3e Œil',
-    message: 'Quel est le message de mon intuition ?'
+    message: 'Quel est le message de mon intuition ?',
+    textColor: 'white'
   }, {
     backgroundColor: 'rgba(64, 0, 255, 0.75)',
     title: 'Chakra Coronal',
-    message: 'Quelle est la compréhension générale de ce tirage ?'
+    message: 'Quelle est la compréhension générale de ce tirage ?',
+    textColor: 'white'
   }
 ]
 

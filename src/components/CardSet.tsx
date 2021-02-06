@@ -1,8 +1,14 @@
 import React, { useState } from 'react'
 import Card from './Card'
-import CardData from '../types'
 
 import './CardSet.css'
+
+export type CardData = {
+  backgroundColor?: string,
+  title?: string,
+  message?: string,
+  textColor?: 'black' | 'white'
+}
 
 interface CardSetProps {
   cardData: CardData[]

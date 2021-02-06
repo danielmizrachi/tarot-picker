@@ -9,6 +9,7 @@
   width: 120px;
   height: 180px;
   padding: 1% 0.7%;
+  margin: 0 1vw;
   border: solid 2px black;
   border-radius: 10px;
   cursor: pointer;
@@ -23,11 +24,13 @@
   height: 600px;
   margin-top: 10vh;
   z-index: 1000;
+  cursor: auto;
 }
 
 .Card-id {
   font-size: 2em;
   font-family: Algerian, Arial, Helvetica, sans-serif;
+  user-select: none;
 }
 .Card-title {
   font-size: 1.6em;

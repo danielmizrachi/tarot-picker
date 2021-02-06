@@ -1,24 +1,41 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import './Card.css'
+import { CardData } from './CardSet'
 
-interface CardProps {
+interface CardProps extends CardData {
   id: number,
-  onClick: (id: number) => void
+  onClick: (id: number) => void,
   isActive: boolean,
-  backgroundColor: string,
-  title?: string,
-  message?: string,
+  order?: number
 }
 
 function Card(props: CardProps) {
-  const { id, onClick, isActive, backgroundColor, title, message } = props
+  const {
+    id,
+    onClick,
+    isActive,
+    order,
+    backgroundColor = 'red',
+    title = '',
+    message = '',
+    textColor = 'black'
+  } = props
+
+  function handleClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    e.stopPropagation()
+    onClick(id)
+  }
 
   return (
     <div
       className={`Card ${isActive ? 'active' : ''}`}
-      style={{ backgroundColor }}
-      onClick={() => onClick(id)}
+      style={{
+        backgroundColor,
+        order,
+        color: textColor,
+      }}
+      onClick={handleClick}
     >
       {isActive ?
           <>
