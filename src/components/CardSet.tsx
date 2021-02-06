@@ -1,17 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Card from './Card'
+import CardData from '../types'
 
 import './CardSet.css'
 
 interface CardSetProps {
-  children: React.ReactNode
+  cardData: CardData[]
 }
 
 function CardSet(props: CardSetProps) {
-  const { children } = props
+  const { cardData } = props
+
+  const [ activeCard, setActiveCard ] = useState<number>(0)
+
+  function handleCardClick(id: number) {
+    setActiveCard(id)
+  }
+
+  const cards = cardData.map((card, index) => {
+    const id = index + 1
+
+    return (
+      <Card
+        id={index + 1}
+        onClick={handleCardClick}
+        isActive={activeCard === id}
+        {...card}
+      />
+    )
+  })
 
   return (
     <div className="CardSet">
-      {children}
+      {cards}
     </div>
   )
 }
