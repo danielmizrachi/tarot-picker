@@ -12,7 +12,13 @@ function CardSet(props: CardSetProps) {
   const { cardData } = props
 
   const [ activeCard, setActiveCard ] = useState<number>(0)
+  const hasActiveCard = activeCard > 0
 
+  function handleBackgroundClick() {
+    if (hasActiveCard) {
+      setActiveCard(0)
+    }
+  }
   function handleCardClick(id: number) {
     setActiveCard(id)
   }
@@ -31,7 +37,10 @@ function CardSet(props: CardSetProps) {
   })
 
   return (
-    <div className="CardSet">
+    <div
+      className={`CardSet ${hasActiveCard ? 'has-active-card' : ''}`}
+      onClick={handleBackgroundClick}
+    >
       {cards}
     </div>
   )

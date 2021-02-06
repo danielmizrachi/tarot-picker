@@ -1,4 +1,4 @@
-import React, { useState, CSSProperties } from 'react'
+import React, { useState } from 'react'
 
 import './Card.css'
 
@@ -14,18 +14,10 @@ interface CardProps {
 function Card(props: CardProps) {
   const { id, onClick, isActive, backgroundColor, title, message } = props
 
-  const style: CSSProperties = {
-    backgroundColor,
-    width: isActive ? '400px' : '120px',
-    height: isActive ? '600px' : '180px',
-    marginTop: isActive ? '10vh' : 0,
-    zIndex: isActive ? 1000 : 200
-  }
-
   return (
     <div
-      className="Card"
-      style={style}
+      className={`Card ${isActive ? 'active' : ''}`}
+      style={{ backgroundColor }}
       onClick={() => onClick(id)}
     >
       {isActive ?

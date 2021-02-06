@@ -5,4 +5,9 @@
   display: flex;
   justify-content: center;
   z-index: 100;
+  transition: background-color 750ms;
+}
+
+.CardSet.has-active-card {
+  background-color: rgba(0, 0, 0, 0.5);
 }
