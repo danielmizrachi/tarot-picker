@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Algerian';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/algerian.ttf')
+}
+
 .Card {
   width: 120px;
   height: 180px;
@@ -7,4 +14,8 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+.Card-id {
+  font-size: 2em;
+  font-family: Algerian, Arial, Helvetica, sans-serif;
 }

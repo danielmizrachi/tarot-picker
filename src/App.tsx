@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <Card
         id={1}
-        backgroundColor="rgba(255,0,0,0.7)"
+        backgroundColor="rgba(255,0,0,0.75)"
         title="Chakra Racine"
         message="Quelle est la situation dans laquelle je me trouve ?"
       />
