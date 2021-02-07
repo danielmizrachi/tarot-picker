@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import './Card.css'
 import { CardData } from './CardSet'
@@ -22,19 +22,27 @@ function Card(props: CardProps) {
     textColor = 'black'
   } = props
 
+  const [ activeCoords, setActiveCoords ] = useState({ top: 0, left: 0 })
+
   function handleClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     e.stopPropagation()
+
+    const { offsetTop, offsetLeft } = e.currentTarget
+    setActiveCoords({ top: offsetTop, left: offsetLeft })
+
     onClick(id)
+  }
+
+  const style: React.CSSProperties = {
+    backgroundColor,
+    order,
+    ...activeCoords
   }
 
   return (
     <div
-      className={`Card ${isActive ? 'active' : ''}`}
-      style={{
-        backgroundColor,
-        order,
-        color: textColor,
-      }}
+      className={`Card ${isActive ? 'active' : ''} ${textColor}`}
+      style={style}
       onClick={handleClick}
     >
       {isActive ?

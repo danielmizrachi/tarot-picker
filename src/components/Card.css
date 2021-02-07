@@ -17,16 +17,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: width 750ms, height 750ms, margin-top 300ms;
+  transition: width 750ms, height 750ms, left 750ms, top 750ms, margin-top 300ms;
 }
 .Card.active {
+  position: fixed;
+  margin: 0;
   width: 400px;
   height: 600px;
+  top: calc(50vh - 300px) !important;
+  left: calc(50vw - 200px) !important;
   z-index: 1000;
   cursor: auto;
 }
 .Card:not(.active):hover {
   margin-top: 2vh;
+}
+.Card.black {
+  color: black;
+}
+.Card.white {
+  color: white;
 }
 
 .Card-id {
