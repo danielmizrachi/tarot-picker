@@ -8,17 +8,24 @@
 .Card {
   width: 120px;
   height: 180px;
-  padding: 1% 0.7%;
   margin: 0 1vw;
   border: solid 2px black;
   border-radius: 10px;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   transition: width 750ms, height 750ms, left 750ms, top 750ms, margin-top 300ms;
+  perspective: 1000px;
 }
+
+.Card:not(.active):hover {
+  margin-top: 2vh;
+}
+.Card.text-black {
+  color: black;
+}
+.Card.text-white {
+  color: white;
+}
+
 .Card.active {
   position: fixed;
   margin: 0;
@@ -26,17 +33,43 @@
   height: 600px;
   top: calc(50vh - 300px) !important;
   left: calc(50vw - 200px) !important;
-  z-index: 1000;
+  z-index: 200;
   cursor: auto;
+  transform: rotateY(180deg);
 }
-.Card:not(.active):hover {
-  margin-top: 2vh;
+
+.Card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: 750ms;
+  transform-style: preserve-3d;
 }
-.Card.black {
-  color: black;
+.Card.active .Card-inner {
+  transform: rotateY(180deg);
 }
-.Card.white {
-  color: white;
+
+.Card-front, .Card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 9% 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.Card-front {
+  transform: rotateY(0deg);
+  z-index: 400;
+}
+.Card-back {
+  transform: rotateY(180deg);
+  z-index: 300;
 }
 
 .Card-id {
