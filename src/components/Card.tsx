@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import './Card.css'
 import { CardData } from './CardSet'
@@ -23,6 +23,15 @@ function Card(props: CardProps) {
   } = props
 
   const [ activeCoords, setActiveCoords ] = useState({ top: 0, left: 0 })
+  const containerRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    const newActiveCoords = {
+      top: containerRef.current?.offsetTop || 0,
+      left: containerRef.current?.offsetLeft || 0
+    }
+    setActiveCoords(newActiveCoords)
+  }, [])
 
   function handleClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     e.stopPropagation()
@@ -43,6 +52,7 @@ function Card(props: CardProps) {
     <div
       className={`Card ${isActive ? 'active' : ''} ${textColor}`}
       style={style}
+      ref={containerRef}
       onClick={handleClick}
     >
       {isActive ?
