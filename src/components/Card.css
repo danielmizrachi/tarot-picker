@@ -12,7 +12,7 @@
   border: solid 2px black;
   border-radius: 10px;
   cursor: pointer;
-  transition: width 750ms, height 750ms, left 750ms, top 750ms, margin-top 300ms;
+  transition: width 750ms, height 750ms, left 750ms, top 750ms, transform 750ms, margin-top 300ms;
   perspective: 1000px;
 }
 
@@ -71,6 +71,9 @@
   transform: rotateY(180deg);
   z-index: 300;
 }
+.Card.active .Card-back .Card-title, .Card.active .Card-back .Card-message {
+  transform: rotateY(180deg);
+}
 
 .Card-id {
   font-size: 2em;
@@ -79,7 +82,9 @@
 }
 .Card-title {
   font-size: 1.6em;
+  transition: transform 750ms;
 }
 .Card-message {
   font-size: 1.2em;
+  transition: transform 750ms;
 }
