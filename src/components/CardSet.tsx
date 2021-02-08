@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Card from './Card'
 
 import './CardSet.css'
@@ -18,8 +18,17 @@ interface CardSetProps {
 function CardSet(props: CardSetProps) {
   const { cardData } = props
 
-  const [ activeCard, setActiveCard ] = useState<number>(0)
+  const [ isBackdropZIndex100, setIsBackdropZIndex100 ] = useState(false)
+  const [ activeCard, setActiveCard ] = useState(0)
   const hasActiveCard = activeCard > 0
+
+  useEffect(() => {
+    if (hasActiveCard) {
+      setIsBackdropZIndex100(true)
+    } else {
+      setTimeout(() => setIsBackdropZIndex100(false), 750)
+    }
+  })
 
   function handleBackdropClick() {
     if (hasActiveCard) {
@@ -51,7 +60,7 @@ function CardSet(props: CardSetProps) {
       </div>
 
       <div
-        className={`CardSet-backdrop ${hasActiveCard ? 'active' : ''}`}
+        className={`CardSet-backdrop ${hasActiveCard ? 'active' : ''} ${isBackdropZIndex100 ? 'z-index-100' : ''}`}
         onClick={handleBackdropClick}
       />
     </>

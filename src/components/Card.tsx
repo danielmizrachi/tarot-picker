@@ -52,7 +52,6 @@ function Card(props: CardProps) {
 
   const style: React.CSSProperties = {
     backgroundColor,
-    order: position,
     ...activeCoords
   }
 
