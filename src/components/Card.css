@@ -13,7 +13,6 @@
   border-radius: 10px;
   cursor: pointer;
   transition: width 750ms, height 750ms, left 750ms, top 750ms, transform 750ms, margin-top 300ms;
-  perspective: 1000px;
 }
 
 .Card:not(.active):hover {
@@ -27,15 +26,17 @@
 }
 
 .Card.active {
-  position: fixed;
   margin: 0;
   width: 400px;
   height: 600px;
   top: calc(50vh - 300px) !important;
   left: calc(50vw - 200px) !important;
-  z-index: 200;
   cursor: auto;
   transform: rotateY(180deg);
+}
+.Card.position-fixed {
+  position: absolute;
+  z-index: 200;
 }
 
 .Card-placeholder {
@@ -84,7 +85,7 @@
   transform: rotateY(180deg);
   z-index: 300;
 }
-.Card.active .Card-back .Card-title, .Card.active .Card-back .Card-message {
+.Card.active .Card-back div {
   transform: rotateY(180deg);
 }
 

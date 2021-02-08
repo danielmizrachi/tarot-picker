@@ -22,6 +22,7 @@ function Card(props: CardProps) {
     textColor = 'black'
   } = props
 
+  const [ isPositionFixed, setIsPositionFixed ] = useState(false)
   const [ activeCoords, setActiveCoords ] = useState({ top: 0, left: 0 })
   const containerRef = useRef<HTMLDivElement | null>(null)
 
@@ -33,13 +34,20 @@ function Card(props: CardProps) {
     setActiveCoords(newActiveCoords)
   }, [])
 
+  useEffect(() => {
+    if (isActive) {
+      setIsPositionFixed(true)
+    } else {
+      setTimeout(() => setIsPositionFixed(false), 750)
+    }
+  }, [isActive])
+
   function handleClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     e.stopPropagation()
 
-    const { offsetTop, offsetLeft } = e.currentTarget
-    setActiveCoords({ top: offsetTop, left: offsetLeft })
-
-    onClick(id)
+    if (!isPositionFixed) {
+      onClick(id)
+    }
   }
 
   const style: React.CSSProperties = {
@@ -51,7 +59,7 @@ function Card(props: CardProps) {
   return (
     <div>
       <div
-        className={`Card ${isActive ? 'active' : ''} text-${textColor}`}
+        className={`Card ${isActive ? 'active' : ''} ${isPositionFixed ? 'position-fixed' : ''} text-${textColor}`}
         style={style}
         ref={containerRef}
         onClick={handleClick}
