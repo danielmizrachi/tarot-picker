@@ -49,26 +49,30 @@ function Card(props: CardProps) {
   }
 
   return (
-    <div
-      className={`Card ${isActive ? 'active' : ''} text-${textColor}`}
-      style={style}
-      ref={containerRef}
-      onClick={handleClick}
-    >
-      <div className="Card-inner">
-        <div className="Card-front">
-          <p className="Card-id">{id}</p>
-        </div>
-
-        <div className="Card-back">
-          <div className="Card-title">
-            <h3>{title}</h3>
+    <div>
+      <div
+        className={`Card ${isActive ? 'active' : ''} text-${textColor}`}
+        style={style}
+        ref={containerRef}
+        onClick={handleClick}
+      >
+        <div className="Card-inner">
+          <div className="Card-front">
+            <p className="Card-id">{id}</p>
           </div>
-          <div className="Card-message">
-            <p>{message}</p>
+
+          <div className="Card-back">
+            <div className="Card-title">
+              <h3>{title}</h3>
+            </div>
+            <div className="Card-message">
+              <p>{message}</p>
+            </div>
           </div>
         </div>
       </div>
+
+      <div className={`Card-placeholder ${isActive ? 'hidden' : ''}`}></div>
     </div>
   )
 }

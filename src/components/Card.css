@@ -38,6 +38,19 @@
   transform: rotateY(180deg);
 }
 
+.Card-placeholder {
+  width: 120px;
+  height: 180px;
+  margin: 0 1vw;
+  border-width: 2px;
+  visibility: hidden;
+  transition: width 750ms, margin 750ms;
+}
+.Card-placeholder.hidden {
+  width: 0;
+  margin: 0;
+}
+
 .Card-inner {
   width: 100%;
   height: 100%;
