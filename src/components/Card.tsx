@@ -5,17 +5,17 @@ import { CardData } from './CardSet'
 
 interface CardProps extends CardData {
   id: number,
-  onClick: (id: number) => void,
-  isActive: boolean,
-  order?: number
+  position: number,
+  onClick: (position: number) => void,
+  isActive: boolean
 }
 
 function Card(props: CardProps) {
   const {
     id,
+    position,
     onClick,
     isActive,
-    order,
     backgroundColor = 'red',
     title = '',
     message = '',
@@ -46,13 +46,13 @@ function Card(props: CardProps) {
     e.stopPropagation()
 
     if (!isPositionFixed) {
-      onClick(id)
+      onClick(position)
     }
   }
 
   const style: React.CSSProperties = {
     backgroundColor,
-    order,
+    order: position,
     ...activeCoords
   }
 

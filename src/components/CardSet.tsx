@@ -4,6 +4,7 @@ import Card from './Card'
 import './CardSet.css'
 
 export type CardData = {
+  id: number,
   backgroundColor?: string,
   title?: string,
   message?: string,
@@ -30,13 +31,13 @@ function CardSet(props: CardSetProps) {
   }
 
   const cards = cardData.map((card, index) => {
-    const id = index + 1
+    const position = index + 1
 
     return (
       <Card
-        id={index + 1}
         onClick={handleCardClick}
-        isActive={activeCard === id}
+        isActive={activeCard === position}
+        position={position}
         {...card}
         key={index}
       />
