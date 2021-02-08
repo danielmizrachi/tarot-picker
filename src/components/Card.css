@@ -8,7 +8,7 @@
 .Card {
   width: 120px;
   height: 180px;
-  margin: 0 1vw;
+  margin: 0 15px;
   border: solid 2px black;
   border-radius: 10px;
   cursor: pointer;
@@ -42,7 +42,7 @@
 .Card-placeholder {
   width: 120px;
   height: 180px;
-  margin: 0 1vw;
+  margin: 0 15px;
   border-width: 2px;
   visibility: hidden;
   transition: width 750ms, margin 750ms;

@@ -29,7 +29,7 @@ function Card(props: CardProps) {
   useEffect(() => {
     const newActiveCoords = {
       top: containerRef.current?.offsetTop || 0,
-      left: containerRef.current?.offsetLeft || 0
+      left: (containerRef.current?.offsetLeft || 15) - 15
     }
     setActiveCoords(newActiveCoords)
   }, [])
