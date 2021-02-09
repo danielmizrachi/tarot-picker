@@ -12,7 +12,7 @@
   border: solid 2px black;
   border-radius: 10px;
   cursor: pointer;
-  transition: width 750ms, height 750ms, left 750ms, top 750ms, transform 750ms, margin-top 300ms;
+  transition: width 750ms, height 750ms, left 750ms, top 750ms, transform 750ms, margin-left 750ms, margin-top 300ms;
 }
 
 .Card:not(.active):hover {
