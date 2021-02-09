@@ -28,7 +28,7 @@ function CardSet(props: CardSetProps) {
     } else {
       setTimeout(() => setIsBackdropZIndex100(false), 750)
     }
-  })
+  }, [hasActiveCard])
 
   function handleBackdropClick() {
     if (hasActiveCard) {
