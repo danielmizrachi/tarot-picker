@@ -13,9 +13,10 @@
   border-radius: 10px;
   cursor: pointer;
   transition: width 750ms, height 750ms, left 750ms, top 750ms, transform 750ms, margin-left 750ms, margin-top 300ms;
+  animation: fade-in 1.5s forwards;
 }
 
-.Card:not(.active):hover {
+.Card.ready:not(.active):hover .Card.ready:not(.active).hover {
   margin-top: 2vh;
 }
 .Card.text-black {
@@ -85,13 +86,13 @@
 }
 
 .Card-container:nth-child(2), .Card-container:nth-child(6) {
-  padding-top: 8vh;
+  animation: slide-down-8 1.5s forwards;
 }
 .Card-container:nth-child(3), .Card-container:nth-child(5) {
-  padding-top: 16vh;
+  animation: slide-down-16 1.5s forwards;
 }
 .Card-container:nth-child(4) {
-  padding-top: 24vh;
+  animation: slide-down-24 1.5s forwards;
 }
 
 .Card-id {
@@ -106,4 +107,40 @@
 .Card-message {
   font-size: 1.2em;
   transition: transform 750ms;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down-8 {
+  from {
+    padding-top: 0;
+  }
+  to {
+    padding-top: 8vh;
+  }
+}
+
+@keyframes slide-down-16 {
+  from {
+    padding-top: 0;
+  }
+  to {
+    padding-top: 16vh;
+  }
+}
+
+@keyframes slide-down-24 {
+  from {
+    padding-top: 0;
+  }
+  to {
+    padding-top: 24vh;
+  }
 }
