@@ -8,7 +8,7 @@
 .Card {
   width: 120px;
   height: 180px;
-  margin: 0 15px;
+  margin: 0 22px;
   border: solid 2px black;
   border-radius: 10px;
   cursor: pointer;
@@ -42,14 +42,9 @@
 .Card-placeholder {
   width: 120px;
   height: 180px;
-  margin: 0 15px;
+  margin: 0 22px;
   border-width: 2px;
   visibility: hidden;
-  transition: width 750ms, margin 750ms;
-}
-.Card-placeholder.hidden {
-  width: 0;
-  margin: 0;
 }
 
 .Card-inner {
@@ -87,6 +82,16 @@
 }
 .Card.active .Card-back div {
   transform: rotateY(180deg);
+}
+
+.Card-container:nth-child(2), .Card-container:nth-child(6) {
+  padding-top: 8vh;
+}
+.Card-container:nth-child(3), .Card-container:nth-child(5) {
+  padding-top: 16vh;
+}
+.Card-container:nth-child(4) {
+  padding-top: 24vh;
 }
 
 .Card-id {

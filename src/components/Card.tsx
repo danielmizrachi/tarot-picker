@@ -29,7 +29,7 @@ function Card(props: CardProps) {
   useEffect(() => {
     const newActiveCoords = {
       top: containerRef.current?.offsetTop || 0,
-      left: (containerRef.current?.offsetLeft || 15) - 15
+      left: (containerRef.current?.offsetLeft || 22) - 22
     }
     setActiveCoords(newActiveCoords)
   }, [])
@@ -56,7 +56,7 @@ function Card(props: CardProps) {
   }
 
   return (
-    <div>
+    <div className="Card-container">
       <div
         className={`Card ${isActive ? 'active' : ''} ${isPositionFixed ? 'position-fixed' : ''} text-${textColor}`}
         style={style}
@@ -79,7 +79,7 @@ function Card(props: CardProps) {
         </div>
       </div>
 
-      <div className={`Card-placeholder ${isActive ? 'hidden' : ''}`}></div>
+      <div className="Card-placeholder"></div>
     </div>
   )
 }
