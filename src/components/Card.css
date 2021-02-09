@@ -16,7 +16,7 @@
   animation: fade-in 1.5s forwards;
 }
 
-.Card.ready:not(.active):hover .Card.ready:not(.active).hover {
+.Card.ready:not(.active):hover {
   margin-top: 2vh;
 }
 .Card.text-black {
