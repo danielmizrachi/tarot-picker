@@ -19,12 +19,6 @@
 .Card.ready:not(.active):hover {
   margin-top: 2vh;
 }
-.Card.text-black {
-  color: black;
-}
-.Card.text-white {
-  color: white;
-}
 
 .Card.active {
   margin: 0;
@@ -80,6 +74,12 @@
 .Card-back {
   transform: rotateY(180deg);
   z-index: 300;
+}
+.Card-back.text-black {
+  color: black;
+}
+.Card-back.text-white {
+  color: white;
 }
 .Card.active .Card-back div {
   transform: rotateY(180deg);

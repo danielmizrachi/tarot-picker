@@ -62,7 +62,7 @@ function Card(props: CardProps) {
   return (
     <div className="Card-container">
       <div
-        className={`Card ${isActive ? 'active' : ''} ${isReady ? 'ready' : ''} ${isPositionFixed ? 'position-fixed' : ''} text-${textColor}`}
+        className={`Card ${isActive ? 'active' : ''} ${isReady ? 'ready' : ''} ${isPositionFixed ? 'position-fixed' : ''}`}
         style={style}
         ref={cardElementRef}
         onClick={handleClick}
@@ -72,7 +72,7 @@ function Card(props: CardProps) {
             <p className="Card-id">{id}</p>
           </div>
 
-          <div className="Card-back">
+          <div className={`Card-back text-${textColor}`}>
             <div className="Card-title">
               <h3>{title}</h3>
             </div>
