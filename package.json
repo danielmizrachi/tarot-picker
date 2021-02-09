@@ -2,6 +2,7 @@
   "name": "tarot-picker",
   "version": "0.1.0",
   "private": true,
+  "homepage": "tarot-picker",
   "dependencies": {
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
